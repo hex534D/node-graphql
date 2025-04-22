@@ -1,5 +1,4 @@
 import cors from 'cors';
-import axios from 'axios';
 import express from 'express';
 import { ApolloServer } from '@apollo/server';
 import { expressMiddleware } from '@apollo/server/express4';
@@ -18,7 +17,7 @@ const server = new ApolloServer({
   resolvers,
 });
 
-// work around to use express v5 and apollo express v4
+// work around middleware to use express v5 and apollo express v4
 app.use((req, res, next) => {
   req.body = req.body || {};
   next();
@@ -36,5 +35,5 @@ await server.start();
 app.use('/graphql', expressMiddleware(server));
 
 app.listen(PORT, async () => {
-  console.log(`App is running on PORT: ${PORT}`);
+  console.log(`Server is running on PORT: ${PORT}`);
 });
