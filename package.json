@@ -1,0 +1,23 @@
+{
+  "name": "node-graphql",
+  "version": "1.0.0",
+  "description": "simple graphql example with node",
+  "main": "app.js",
+  "author": "hex534D",
+  "type": "module",
+  "scripts": {
+    "start": "nodemon app.js"
+  },
+  "license": "MIT",
+  "dependencies": {
+    "@apollo/server": "^4.12.0",
+    "@types/express": "^5.0.1",
+    "axios": "^1.8.4",
+    "cors": "^2.8.5",
+    "express": "^5.1.0",
+    "graphql": "^16.10.0"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.9"
+  }
+}
