@@ -8,6 +8,17 @@ export const resolvers = {
         )
       ).data,
   },
+  User: {
+    todos: async (user) => {
+      const userTodos = (
+        await axios.get(
+          `https://jsonplaceholder.typicode.com/todos`
+        )
+      ).data;
+
+      return userTodos.filter(todo => todo.userId === user.id);
+    }
+  },
   Query: {
     getTodos: async () =>
       (await axios.get('https://jsonplaceholder.typicode.com/todos'))

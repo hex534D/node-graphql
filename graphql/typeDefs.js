@@ -4,7 +4,8 @@ export const typeDefs = `
         name: String!,
         username: String!,
         email: String!,
-        phone: String!
+        phone: String!,
+        todos: [Todo]!
       }
 
       type Todo {
